@@ -1,8 +1,9 @@
-# Primecount Cython interface
+# Cython interface to primecount (primecountpy fork)
 
 This is a Cython interface to the C++ library [primecount](https://github.com/kimwalisch/primecount).
 
-We have split out primecount [SageMath](https://sagemath.org) spkg with its Cython interface.
+It is a compatible fork of [primecountpy](https://pypi.org/project/primecountpy/).
+
 
 Quick installation and testing:
 

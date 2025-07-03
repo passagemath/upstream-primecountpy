@@ -7,19 +7,23 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "primecountpy"
+name = "passagemath-primesieve-primecount"
 version = "0.1.1"
-description = "Cython interface for C++ primecount library"
+description = "Cython interface for the primecount library"
 authors = [
     {name = "SageMath Developers", email = "sage-devel@googlegroups.com"},
+]
+maintainers = [
+    {name = "Matthias Köppe"},
+    {name = "passagemath contributors"},
 ]
 dependencies = [
     "cysignals",
 ]
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 license = {file = "LICENSE"}
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Science/Research",
     "Programming Language :: Python :: 3",
     "Topic :: Scientific/Engineering :: Mathematics",
@@ -30,6 +34,8 @@ file = "README.md"
 content-type = "text/markdown"
 
 [project.urls]
-Homepage = "https://github.com/dimpase/primecountpy"
+"Repo (upstream)" = "https://github.com/dimpase/primecountpy"
+"Repo" = "https://github.com/passagemath/passagemath-primesieve-primecount"
 "User Manual" = "https://primecountpy.readthedocs.io"
-"Bug Tracker" = "https://github.com/dimpase/primecountpy/issues"
+"Bug Tracker (upstream)" = "https://github.com/dimpase/primecountpy/issues"
+"Bug Tracker" = "https://github.com/passagemath/passagemath-primesieve-primecount/issues"
