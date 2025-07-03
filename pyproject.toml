@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "passagemath-primesieve-primecount"
-version = "0.1.1"
+version = "0.1.1.1"
 description = "Cython interface for the primecount library"
 authors = [
     {name = "SageMath Developers", email = "sage-devel@googlegroups.com"},
