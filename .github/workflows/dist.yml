@@ -69,6 +69,8 @@ jobs:
       CIBW_ENVIRONMENT: "PATH=$(pwd)/local/bin:$PATH CPATH=$(pwd)/local/include:$CPATH LIBRARY_PATH=$(pwd)/local/lib:$LIBRARY_PATH LD_LIBRARY_PATH=$(pwd)/local/lib:$LD_LIBRARY_PATH PKG_CONFIG_PATH=$(pwd)/local/share/pkgconfig:$PKG_CONFIG_PATH ACLOCAL_PATH=/usr/share/aclocal"
       # Use 'build', not 'pip wheel'
       CIBW_BUILD_FRONTEND: build
+      CIBW_REPAIR_WHEEL_COMMAND_LINUX: "set -x && export LD_LIBRARY_PATH=$(pwd)/prefix/lib:$LD_LIBRARY_PATH && auditwheel -v -v -v -v repair -w {dest_dir} {wheel}"
+      CIBW_REPAIR_WHEEL_COMMAND_MACOS: "set -x && export DYLD_FALLBACK_LIBRARY_PATH=$(pwd)/prefix/lib:$DYLD_FALLBACK_LIBRARY_PATH && delocate-wheel --require-archs {delocate_archs} -w {dest_dir} -v {wheel}"
       CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28
       CIBW_MANYLINUX_AARCH64_IMAGE: manylinux_2_28
     steps:
@@ -209,7 +211,7 @@ jobs:
           export PATH=$(pwd)/build/bin:$PATH
           eval $(sage-print-system-package-command auto --yes update)
           eval $(sage-print-system-package-command auto --yes --no-install-recommends --spkg install _bootstrap bzip2 xz liblzma)
-          sed -i.bak '/m4_pushdef.*MIN_VERSION/s/3[0-9.]*/3.9.0/' build/pkgs/python3/spkg-configure.m4
+          sed -i.bak '/m4_pushdef.*MIN_VERSION/s/3[0-9.]*/3.8.0/' build/pkgs/python3/spkg-configure.m4
           ./bootstrap -s
         shell: msys2 {0}
 
