@@ -22,8 +22,7 @@ copyright = '2021, SageMath Developers'
 author = 'SageMath Developers'
 
 # The full version, including alpha/beta/rc tags
-with open("../../VERSION", "r") as version_file:
-    release = version_file.read().strip()
+release = '0.1.1'
 
 
 # -- General configuration ---------------------------------------------------
