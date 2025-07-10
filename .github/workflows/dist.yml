@@ -173,7 +173,7 @@ jobs:
       CIBW_PROJECT_REQUIRES_PYTHON: ">=3.9"
       # Run before wheel build
       CIBW_BEFORE_BUILD_WINDOWS: |
-        pip install delvewheel
+        pip install delvewheel && pip install --config-settings setup-args="--vsenv" cysignals
       # Environment during wheel build
       # PYTHONUTF8=1 is for delvewheel
       CIBW_ENVIRONMENT: >-
