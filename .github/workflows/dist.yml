@@ -164,6 +164,7 @@ jobs:
       SPKGS: _bootstrap _prereq
       # Non-Python packages to install as spkgs
       TARGETS_PRE: primecount-ensure
+      CIBW_BUILD: "*${{ matrix.build }}*"
       # Disable building PyPy wheels on all platforms
       CIBW_SKIP: "pp*"
       #
