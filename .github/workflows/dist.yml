@@ -264,13 +264,13 @@ jobs:
             config.status
             sage-local
           key: >-
-            ${{ runner.os }}-cibuildwheel-${{ matrix.arch }}-build=${{
+            ${{ matrix.os }}-cibuildwheel-${{ matrix.arch }}-build=${{
               hashFiles('build',
                         'configure.ac',
                         'm4')
             }}
           restore-keys: |
-            ${{ runner.os }}-cibuildwheel-${{ matrix.arch }}
+            ${{ matrix.os }}-cibuildwheel-${{ matrix.arch }}
 
       - name: Unpack and prepare
         id: unpack
